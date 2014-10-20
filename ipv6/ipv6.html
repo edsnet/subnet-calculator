@@ -5,10 +5,8 @@
 	  <input ng-model="query" type="text" class="form-control" placeholder="2001:db8:1234::">
 	  <div class="input-group-btn">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Prefix Length <span class="caret"></span></button>
-        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-          <li><a href="#">/64</a></li>
-          <li><a href="#">/63</a></li>
-          <li><a href="#">/62</a></li>
+        <ul class="dropdown-menu dropdown-menu-right scroll-menu" role="menu">
+          <li ng-repeat="prefix in prefixes"><a href="#">/{{ prefix }}</a></li>
         </ul>
       </div>
 	</div>
