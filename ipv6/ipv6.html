@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#/ipv6">IPv6</a></li>
+		<li><a href="#/ipv4">IPv4</a></li>
+	</ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+  <br/>
+	<div class="input-group">
+	  <input ng-model="query" type="text" class="form-control" placeholder="2001:db8:1234::">
+	  <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Prefix Length <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+          <li><a href="#">/64</a></li>
+          <li><a href="#">/63</a></li>
+          <li><a href="#">/62</a></li>
+        </ul>
+      </div>
+	</div>
+  </div>
+</div>
