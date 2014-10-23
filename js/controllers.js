@@ -17,7 +17,7 @@ ipcalculatorControllers.controller("ipv6CalCtrl", ['$scope',
         $scope.prefixes = [];
         var i;
         
-        for( i=1; i<=64; i++ ){
+        for( i=128; i>=1; i-- ){
             $scope.prefixes.push(i);
         }
 	}
@@ -29,7 +29,7 @@ ipcalculatorControllers.controller('ipv4CalCtrl', ['$scope',
 		$scope.subnets = [];
 		var i;
 		
-		for( i=1; i<=32; i++ ){
+		for( i=32; i>=1; i-- ){
 			$scope.subnets.push(i);
 		}
 	}
