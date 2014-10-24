@@ -1,15 +1,23 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-2" ng-init="selected=0">
+<form name="ipv6Input" novalidate>
+  <div class="col-md-6 col-md-offset-2">
   <br/>
 	<div class="input-group">
-	  <input ng-model="query" type="text" class="form-control" placeholder="2001:db8:1234::">
+	  <input ng-model="ipv6.address" type="text" class="form-control" placeholder="2001:db8:1234::" ng-pattern="ipv6.pattern" name="address" ng-change="onChange()" required>
 	  <div class="input-group-btn">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Prefix Length <span class="caret"></span></button>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{ipv6.title}} <span class="caret"></span></button>
         <ul class="dropdown-menu dropdown-menu-right scroll-menu" role="menu">
-          <li ng-repeat="prefix in prefixes"><a ng-click="$parent.selected=prefix">/{{ prefix }}</a></li>
+          <li ng-repeat="prefix in ipv6.prefixes"><a ng-click="ipv6.title=prefix">/{{ prefix }}</a></li>
         </ul>
       </div>
 	</div>
-	<p>Prefix: {{selected}}</p>
+	<p>Prefix: {{ipv6.title}}<br/>
+	   Address: {{ipv6.address}}<br/>
+	   Valid: {{ipv6Input.address.$valid}}<br/>
+	   Response: {{ipv6.response}}<br/>
+	   Split: {{ipv6.splitAddress}}
+	</p>
+	<code>Form: {{ipv6Input}}</code>
   </div>
+  </form>
 </div>
