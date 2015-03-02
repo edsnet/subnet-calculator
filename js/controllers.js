@@ -42,8 +42,9 @@ ipcalculatorControllers.controller('ipv4CalCtrl', ['$scope',
 		$scope.ipv4.address = "";
 		$scope.ipv4.pattern = /^((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])$/;
 		$scope.ipv4.subnets = [];
-		$scope.ipv4.response = "No.";
+		$scope.ipv4.response = "No";
 		$scope.ipv4.splitAddress = [];
+        $scope.ipv4.value = "";
 		var i;
 		
 		for( i=32; i>=1; i-- ){
@@ -54,6 +55,10 @@ ipcalculatorControllers.controller('ipv4CalCtrl', ['$scope',
             if($scope.ipv4Input.address.$valid){
                 $scope.ipv4.response = "Yes"; 
                 $scope.ipv4.splitAddress = $scope.ipv4.address.split('.');
+            }
+            else {
+                $scope.ipv4.response = "No";
+                $scope.ipv4.splitAddress = [];
             }
         };		
 	}

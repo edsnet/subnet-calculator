@@ -3,7 +3,7 @@
   <div class="col-md-6 col-md-offset-1">
   <br/>
 	<div class="input-group">
-	  <input ng-model="ipv4.address" type="text" class="form-control" placeholder="10.0.0.0" ng-pattern="ipv4.pattern" name="address" ng-change="onChange()" required>
+	  <input ng-model="ipv4.address" type="text" class="form-control" placeholder="10.0.0.0" name="address" ng-change="onChange()" required>
 	  <div class="input-group-btn">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span ng-bind="ipv4.title"></span> <span class="caret"></span></button>
         <ul class="dropdown-menu dropdown-menu-right scroll-menu" role="menu">
@@ -15,9 +15,10 @@
 	   Address: {{ipv4.address}}<br/>
 	   Valid: {{ipv4Input.address.$valid}}<br/>
 	   Response: {{ipv4.response}}<br/>
-	   Split: {{ipv4.splitAddress}}
+	   Split: {{ipv4.splitAddress}}<br/>
 	</p>
-	<code>Form: {{ipv4Input}}</code>
+    Form:<br/>
+	<pre>{{ipv4Input | json}}</pre>
   </div>
   </form>
 </div>
