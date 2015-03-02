@@ -5,19 +5,20 @@ var ipcalculatorApp = angular.module('ipcalculatorApp', [
 	'ipcalculatorControllers'
 ]);
 
-ipcalculatorApp.config(['$routeProvider',
-	function($routeProvider){
+ipcalculatorApp.config(function($routeProvider, $locationProvider){
+        $locationProvider.html5Mode(true);
+        
 		$routeProvider.
 			when('/ipv6', {
-				templateUrl: 'ipv6/ipv6.html',
+				templateUrl: '/partials/ipv6.html',
 				controller: 'ipv6CalCtrl'
 			}).
 			when('/ipv4', {
-				templateUrl: 'ipv4/ipv4.html',
+				templateUrl: '/partials/ipv4.html',
 				controller: 'ipv4CalCtrl'
 			}).
 			otherwise({
 				redirectTo: '/ipv6'
 			});
 	}
-]);
+);
